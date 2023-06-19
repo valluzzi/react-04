@@ -22,24 +22,6 @@ class OlMap extends Map {
 
         super(init_options);
 
-        
-        // These lines keep the map size updated!!!!----------------------------
-        // the resizeObserver watch for the map div size changes
-
-        this.resizeObserver = new ResizeObserver(() => {
-            //??oldSize newSIze???
-            this.updateSize();
-        });
-
-        // the resizeObserver must be activated when
-        // the TargetElement is not undefined
-        this.on("postrender", (e)=>{
-            this.resizeObserver.observe(e.target.getTargetElement());
-        });
-
-        this.getViewport().addEventListener('contextmenu', function(evt) {
-            evt.preventDefault();
-        });
 
     }//end constructor
 

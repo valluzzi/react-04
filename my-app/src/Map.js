@@ -8,19 +8,17 @@ export function Map(props){
     const mapRef = useRef(null);
 
     const style = {
-      backgroundColor: "white",
+      backgroundColor: "gray",
       border: "solid black 1px",
       with: 640,
       height: 480
     };
-    
-    let inimap = new OlMap({});
-    
-    const [map, setMap] = useState(inimap)
+       
+    const [map, setMap] = useState(new OlMap({}))
     
     useEffect(()=>{
         map.setTarget(mapRef.current)
-    },[]) // eslint-disable-line
+    },[map]) 
     
     return(
       <MapContext.Provider value={[map, setMap]}>
