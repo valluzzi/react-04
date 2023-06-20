@@ -1,5 +1,4 @@
-import {useEffect, useRef, useState } from "react"
-import MapContext from "./MapContext";
+import React, {useEffect, useRef } from "react"
 import OlMap from "./olMap";
 
 
@@ -14,18 +13,18 @@ export function Map(props){
       height: 480
     };
        
-    const [map, setMap] = useState(new OlMap({}))
+    const map = new OlMap({})
     
     useEffect(()=>{
         map.setTarget(mapRef.current)
-    },[map]) 
+    },[]) 
     
     return(
-      <MapContext.Provider value={[map, setMap]}>
+      
         <div ref={mapRef} style={style}>
           {props.children}
         </div>
-      </MapContext.Provider>
+      
     )
 }
 
