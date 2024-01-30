@@ -16,7 +16,7 @@ export function ReactMap(props){
     
     useEffect(()=>{
         map.setTarget(mapRef.current)
-    },[]) 
+    },[]) //eslint-disable-line react-hooks/exhaustive-deps
     
     return(
       
