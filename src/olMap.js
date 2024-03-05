@@ -3,6 +3,8 @@ import View from 'ol/View.js';
 import OSM from 'ol/source/OSM.js';
 import TileLayer from 'ol/layer/Tile.js';
 
+
+
 class olMap extends Map {
   
     constructor(options) {
@@ -10,6 +12,7 @@ class olMap extends Map {
         let init_options = {
             ...options,
             controls: [], 
+            interactions: [],
             view: new View({
                 projection: "EPSG:4326",
                 center: [12, 44],
